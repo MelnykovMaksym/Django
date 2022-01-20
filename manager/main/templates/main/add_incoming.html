@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Add incoming
+{% endblock %}}
+
+
+{% block content %}
+<form method = "post">
+    {% csrf_token %}
+    <h5>Income source:</h5>
+    {{form.category}}
+    <h5>Income amount:</h5>
+    {{form.amount}}
+    <h5>Date of income:</h5>
+    {{form.date}}
+    <button type="submit" class="btn btn-success"> Add </button>
+    <span>{{error}}</span>
+</form>
+{% endblock %}
+
+

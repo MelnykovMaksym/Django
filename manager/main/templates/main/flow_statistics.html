@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Flow statistics
+{% endblock %}}
+
+
+{% block content %}
+Statistics
+<h4>{{title}}</h4>
+<form action ="{% url 'flow_statistics' %}"  method = "post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!-- form is name, defined in views.py for current form. as_p is a function, which prints all atributes of form -->
+    <button type="submit" class="btn btn-success"> Reveal </button>
+    <!-- button type submit - for sending user input to server -->
+
+</form>
+<h3>{{result_title}}</h3>
+<h2>{{result_incomes}}</h2>
+<h2>{{result_expences}}</h2>
+<h2>{{result_balance}}</h2>
+{% endblock %}
+

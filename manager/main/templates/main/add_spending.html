@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Add spending
+{% endblock %}}
+
+
+{% block content %}
+To add spending fill up the form
+<form method = "post">
+    {% csrf_token %}
+    <h5>Expence category:</h5>
+    {{form.category}}
+    <h5>Expence amount:</h5>
+    {{form.amount}}
+    <h5>Date of expence:</h5>
+    {{form.date}}
+    <button type="submit" class="btn btn-success"> Add </button>
+</form>
+{% endblock %}
+
+
